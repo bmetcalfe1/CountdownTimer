@@ -15,7 +15,7 @@ body {
   font-family: 'Inconsolata', monospace;
 }
 
-.display__time-left {
+.display-time-left {
   font-weight: 100;
   font-size: 20rem;
   margin: 0;
@@ -76,7 +76,7 @@ body {
   justify-content: center;
 }
 
-.display__end-time {
+.display-end-time {
   font-size: 4rem;
   color:white;
 }
