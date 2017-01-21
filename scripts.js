@@ -6,20 +6,34 @@ const buttons = document.querySelectorAll('[data-time]');
 function timer(seconds) {
 	// clear existing timers
 	clearInterval(countdown);
-
 	const now = Date.now();
 	const then = now + seconds * 1000;
 	displayTimeLeft(seconds);
 	displayEndTime(then);
 
-	countdown = setInterval(() => {
-		const secondsLeft = Math.round((then - Date.now()) / 1000);
-		if (secondsLeft < 0) {
-			clearInterval(countdown);
-			return;
-		}
-		displayTimeLeft(secondsLeft);
-	}, 1000);
+	//if pomodoro
+	if (seconds > 300) {
+		countdown = setInterval(() => {
+			const secondsLeft = Math.round((then - Date.now()) / 1000);
+			if (secondsLeft < 1) {
+				clearInterval(countdown);
+				timer(300);
+			}
+			displayTimeLeft(secondsLeft);
+		}, 1000);
+	}
+
+	//if break
+	if (seconds <= 300) {
+		countdown = setInterval(() => {
+			const secondsLeft = Math.round((then - Date.now()) / 1000);
+			if (secondsLeft < 1) {
+				clearInterval(countdown);
+				timer(1500);
+			}
+			displayTimeLeft(secondsLeft);
+		}, 1000);
+	}
 }
 
 function displayTimeLeft(seconds) {
@@ -54,6 +68,4 @@ document.customForm.addEventListener('submit', function(e) {
 
 //reset button?
 //Makes noise on finish
-//pomodoro goes right into 5 min break
-//5 min break goes into pomodoro
 //new css scheme
