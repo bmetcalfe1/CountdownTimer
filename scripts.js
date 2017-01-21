@@ -51,3 +51,9 @@ document.customForm.addEventListener('submit', function(e) {
   timer(mins * 60);
   this.reset();
 });
+
+//reset button?
+//Makes noise on finish
+//pomodoro goes right into 5 min break
+//5 min break goes into pomodoro
+//new css scheme

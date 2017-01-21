@@ -1,8 +1,11 @@
-html {
-  box-sizing: border-box;
+html { 
+  /*box-sizing: border-box;*/
   font-size: 10px;
-  background: #8E24AA;
-  background: linear-gradient(45deg,  #42a5f5 0%,#478ed1 50%,#0d47a1 100%);
+  background: url('https://upload.wikimedia.org/wikipedia/commons/f/f5/Tomatoes.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 *, *:before, *:after {
